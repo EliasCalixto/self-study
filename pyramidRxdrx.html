@@ -8,26 +8,21 @@
 <body>
 
     <script>
-        function printPyramid(texto) {
-            texto = texto.toUpperCase(); 
-            let pyramid = "";
-
-
-            for (let i = 0; i < texto.length; i++) {
-                let leftPart = texto.substring(0, i + 1); 
-                let rightPart = leftPart.split("").reverse().join("");
-                let spaces = " ".repeat(texto.length - i - 1);
-            
-    
-                pyramid += leftPart + spaces + spaces + rightPart + "\n";
-            }
+        function printPyramid(str) {
+            str = str.toUpperCase();
+            const totalLength = str.length;
         
-
-            console.log(pyramid);
+            for (let i = 0; i < totalLength; i++) {
+                let leftPart = str.substring(0, i + 1);
+                let rightPart = str.substring(0, i + 1).split("").reverse().join("");
+                let spaces = "&nbsp;".repeat(totalLength - i - 1);
+            
+                document.write(leftPart + spaces + spaces + rightPart + "<br>");
+            }
         }
 
-        palabra = prompt("Ingrese la palabra: ")
-        printPyramid(palabra);
+        const userInput = prompt("Ingrese una cadena de texto:");
+        printPyramid(userInput);
     </script>
 </body>
 </html>
