@@ -8,29 +8,15 @@
 <body>
 
     <script>
-        function printPyramid(str) {
-            str = str.toUpperCase();
-            let pyramid = "";
-
-            for (let i = 0; i < str.length; i++) {
-                let leftPart = str.substring(0, i + 1);
-                let rightPart = leftPart.split("").reverse().join("").slice(1);
-                pyramid += leftPart + rightPart + "\n";
-            }
-        
-            console.log(pyramid);
-        }
-        printPyramid("rxdrx");
-
-        function printPyramid(str) {
-            str = str.toUpperCase(); 
+        function printPyramid(texto) {
+            texto = texto.toUpperCase(); 
             let pyramid = "";
 
 
-            for (let i = 0; i < str.length; i++) {
-                let leftPart = str.substring(0, i + 1); 
+            for (let i = 0; i < texto.length; i++) {
+                let leftPart = texto.substring(0, i + 1); 
                 let rightPart = leftPart.split("").reverse().join("");
-                let spaces = " ".repeat(str.length - i - 1);
+                let spaces = " ".repeat(texto.length - i - 1);
             
     
                 pyramid += leftPart + spaces + spaces + rightPart + "\n";
@@ -40,7 +26,8 @@
             console.log(pyramid);
         }
 
-        printPyramid("rxdrx");
+        palabra = prompt("Ingrese la palabra: ")
+        printPyramid(palabra);
     </script>
 </body>
 </html>
